@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周冯思远 的个人主页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(160deg, #eef2ff 0%, #e0e7ff 45%, #dbeafe 100%);
+      min-height: 100vh;
+      color: #1e1b4b;
+      line-height: 1.7;
+    }
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 20px 32px;
+    }
+
+    /* ===== 头部 ===== */
+    .hero {
+      text-align: center;
+      padding: 40px 24px 32px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(79, 70, 229, 0.12);
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+    }
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .hero .slogan {
+      margin-top: 8px;
+      font-size: 16px;
+      color: #4338ca;
+      font-weight: 500;
+    }
+    .hero .badges {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 12.5px;
+      padding: 4px 14px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      border: 1px solid #c7d2fe;
+    }
+
+    /* ===== 板块 ===== */
+    .section {
+      margin-top: 20px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(79, 70, 229, 0.08);
+    }
+    .section h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-left: 12px;
+      border-left: 4px solid #6366f1;
+    }
+    .section p {
+      font-size: 14.5px;
+      color: #4a4a68;
+    }
+    .placeholder {
+      color: #a0a0bd;
+    }
+
+    /* 方向卡片 */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .card {
+      flex: 1 1 160px;
+      padding: 14px 16px;
+      background: #f5f6ff;
+      border: 1px solid #e0e7ff;
+      border-radius: 14px;
+    }
+    .card .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #3730a3;
+    }
+    .card .desc {
+      margin-top: 4px;
+      font-size: 12.5px;
+      color: #6b7280;
+    }
+
+    /* 联系 */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .link-btn {
+      flex: 1 1 140px;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      text-decoration: none;
+      background: #eef2ff;
+      color: #4338ca;
+      border: 1px solid #c7d2fe;
+      transition: background 0.2s;
+    }
+    .link-btn:hover {
+      background: #e0e7ff;
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 12.5px;
+      color: #8b8bb0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 头部：头像 + 名字 + 一句话介绍 -->
+    <header class="hero">
+      <div class="avatar">z</div>
+      <h1>周冯思远</h1>
+      <p class="slogan">正在学习 AI · 用代码探索未来</p>
+      <div class="badges">
+        <span class="badge">AI 学习者</span>
+        <span class="badge">代码新手</span>
+        <span class="badge">持续成长中</span>
+      </div>
+    </header>
+
+    <!-- 关于我（占位，可自由改写） -->
+    <section class="section">
+      <h2>关于我</h2>
+      <p>
+        你好，我是 <strong>zfsy</strong>。<span class="placeholder">这里可以写你的学校 / 专业 / 目前在做的事，
+        比如："我是一名复旦大学在校学生，正在系统学习人工智能，希望把想法变成看得见的作品。"</span>
+      </p>
+    </section>
+
+    <!-- 学习方向（占位，可自由改写） -->
+    <section class="section">
+      <h2>我的方向</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="title">AI 入门</div>
+          <div class="desc">正在打基础：了解 AI 是什么、能做什么</div>
+        </div>
+        <div class="card">
+          <div class="title">动手实践</div>
+          <div class="desc">从这个小主页开始，做出自己的作品</div>
+        </div>
+        <div class="card">
+          <div class="title">持续探索</div>
+          <div class="desc">接下来想学什么，由你决定</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我（占位：改成你自己的邮箱 / GitHub 链接） -->
+    <section class="section">
+      <h2>联系我</h2>
+      <div class="links">
+        <a class="link-btn" href="mailto:你的邮箱@example.com">📧 邮箱</a>
+        <a class="link-btn" href="https://github.com/你的用户名" target="_blank">GitHub</a>
+      </div>
+    </section>
+
+    <footer>© 2026 周冯思远· 用 ❤ 和 AI 制作</footer>
+
+  </div>
+</body>
+</html>
