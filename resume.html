@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周冯思远｜简历</title>
+  <meta name="description" content="周冯思远个人简历：复旦大学金融硕士，量化研究方向。">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/resume.css">
+</head>
+<body class="resume-page">
+
+  <div class="toolbar">
+    <a href="index.html">← 返回主页</a>
+    <div class="toolbar-actions">
+      <button class="btn" type="button" onclick="window.print()">打印 / 保存为 PDF</button>
+    </div>
+  </div>
+
+  <main class="sheet">
+
+    <header class="resume-header">
+      <h1>周冯思远</h1>
+      <div class="headline">复旦大学金融硕士｜量化金融 / 量化研究方向</div>
+      <div class="contact">
+        上海 · <a href="mailto:1470520256@qq.com">1470520256@qq.com</a> ·
+        <a href="https://github.com/Keyneses" target="_blank" rel="noopener">github.com/Keyneses</a>
+      </div>
+    </header>
+
+    <section class="resume-section">
+      <h2>研究兴趣</h2>
+      <p>量化投资与资产定价、时间序列与机器学习方法、金融衍生品。</p>
+    </section>
+
+    <section class="resume-section">
+      <h2>教育经历</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">复旦大学 · 金融硕士</span>
+          <span class="entry-date">2026–2028</span>
+        </div>
+        <div class="entry-sub">量化投资理论与实务、金融大数据挖掘与分析、人工智能与数据分析、计量经济学方法与应用、金融衍生工具理论与实务、公司金融理论与实务</div>
+        <p>研究生入学考试初试总分 420，数学三满分（150 / 150），复试总排名前十。</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">山东财经大学 · 金融数学本科</span>
+          <span class="entry-date">2018–2022</span>
+        </div>
+        <p>金融数学专业，数学与统计基础扎实；多次获校级奖学金，全国大学生数学竞赛（初赛）一、二等奖。</p>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2>量化技能</h2>
+      <p class="skill-line"><strong>Python</strong>　具备数据处理与分析基础，掌握 pandas / NumPy 等；</p>
+      <p class="skill-line"><strong>SQL</strong>　具备基础查询与数据处理能力；</p>
+      <p class="skill-line"><strong>Excel</strong>　熟练用于数据整理、分析及研究材料制作；</p>
+      <p class="skill-line"><strong>方法</strong>　时间序列、随机过程、机器学习、PCA / PLS / SPCA 等基础方法；</p>
+      <p class="skill-line"><strong>英语</strong>　CET-6，可用于英文资料阅读与工作沟通。</p>
+    </section>
+
+    <section class="resume-section">
+      <h2>量化项目</h2>
+      <div class="project-title">国债期货与国债 ETF 配对交易研究｜Python / pandas / backtrader</div>
+      <div class="project-meta">数据清洗与复权 · 协整与 OU 参数估计 · 三阈值策略 · 训练/验证校准</div>
+      <ul class="bullets">
+        <li>清洗约 5GB 国债期货与 ETF 分钟快照，依据样例数据反推 K 线边界与清洗口径（涨跌停哨兵值、盘前占位行、午休段），重采样为 1 分钟序列；完成 ETF 分红前复权与期货主连换月拼接（换月零跳空），并对参考基准六个字段逐根比对，确认零差异。</li>
+        <li>对 ETF 与国债期货价格做滚动 OLS（ETF 为因变量、期货为自变量），以残差构造价差；对价差做 ADF 平稳性检验，按 AR(1) 离散化估计 OU 参数 μ、θ、σ_eq 与半衰期，并计算滚动 z-score。</li>
+        <li>实现三阈值（开仓 / 平仓 / 止损）配对策略，按 β 换算两腿名义价值与对冲手数，仓位随偏离幅度分层；信号于收盘生成、下一根 bar 撮合，规避未来函数；训练期网格校准、验证期外推，并以 backtrader 完成全样本复算。</li>
+      </ul>
+    </section>
+
+    <section class="resume-section">
+      <h2>量化学习与实践</h2>
+      <p>系统学习 Kelly &amp; Xiu《Financial Machine Learning》等量化方向论文。</p>
+    </section>
+
+    <section class="resume-section">
+      <h2>实习 / 工作经历</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">国盛证券股份有限公司 · 卖方研究实习生</span>
+          <span class="entry-date">2026.04–2026.10</span>
+        </div>
+        <p>深度参与 3 篇研究报告撰写：2 篇公司首次覆盖报告（隆盛科技 300680、长源东谷 603950）估值板块外全流程；行业深度报告覆盖燃气轮机产业链。</p>
+        <p>负责公开数据搜集与交叉核验、图表制作及报告底稿整理，参与行业深度报告合规审核材料核对；持续跟踪公司公告与行业数据，支持周报及点评报告更新及其他支持性工作。</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">戴氏教育 · 销售</span>
+          <span class="entry-date">2025.04–2025.08</span>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">四川粤海锦创供应链管理有限公司 · 外贸销售</span>
+          <span class="entry-date">2024.04–2024.09</span>
+        </div>
+        <p>负责动物营养化工品（蛋氨酸羟基类似物钙盐、L-苏氨酸、精氨酸等）出口销售：独立开发海外客户，完成报价议价、合同签订、报关单证与信用证（L/C）结算全流程，并跟踪原料价格与海运费变化调整报价。</p>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2>研究成果</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">隆盛科技（300680）首次覆盖报告</span>
+          <span class="entry-date">2026.07</span>
+        </div>
+        <p>承担业务与行业分析、盈利预测章节初稿：梳理 EGR 主业（2025 年收入 9.6 亿元，同比约 +31%）与新能源驱动电机铁芯业务，跟踪商业航天、人形机器人等新业务及客户结构变化。</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">长源东谷（603950）首次覆盖报告</span>
+          <span class="entry-date">2026.09</span>
+        </div>
+        <p>承担业务与行业分析、盈利预测章节初稿：跟踪缸体、缸盖主业产销（2025 年销量同比 +12.5% / +13.1%）及客户结构，梳理燃气轮机发电机组海外订单（合计 1.65 亿美元）与柴发等 AI 相关新业务。</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">行业深度《AI 算力催生电力缺口，燃机景气周期下国内产业链迎发展良机》</span>
+          <span class="entry-date">2026.10</span>
+        </div>
+        <p>参与北美电力供需、AI 数据中心用电及燃气轮机产业链部分章节初稿撰写；负责数据整理与交叉核验、图表制作及报告底稿、合规审核材料核对。</p>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2>荣誉与资格</h2>
+      <p><strong>证书</strong>　大学英语六级、证券从业资格证；</p>
+      <p><strong>荣誉</strong>　多次校级奖学金；全国大学生数学竞赛（初赛）一、二等奖。</p>
+    </section>
+
+    <div class="sheet-footer">更新于 2026.10</div>
+
+  </main>
+
+</body>
+</html>

@@ -3,209 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>周冯思远 的个人主页</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(160deg, #eef2ff 0%, #e0e7ff 45%, #dbeafe 100%);
-      min-height: 100vh;
-      color: #1e1b4b;
-      line-height: 1.7;
-    }
-    .page {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 48px 20px 32px;
-    }
-
-    /* ===== 头部 ===== */
-    .hero {
-      text-align: center;
-      padding: 40px 24px 32px;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(79, 70, 229, 0.12);
-    }
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 700;
-      color: #fff;
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
-    }
-    .hero h1 {
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .hero .slogan {
-      margin-top: 8px;
-      font-size: 16px;
-      color: #4338ca;
-      font-weight: 500;
-    }
-    .hero .badges {
-      margin-top: 16px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .badge {
-      font-size: 12.5px;
-      padding: 4px 14px;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #4338ca;
-      border: 1px solid #c7d2fe;
-    }
-
-    /* ===== 板块 ===== */
-    .section {
-      margin-top: 20px;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(79, 70, 229, 0.08);
-    }
-    .section h2 {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      padding-left: 12px;
-      border-left: 4px solid #6366f1;
-    }
-    .section p {
-      font-size: 14.5px;
-      color: #4a4a68;
-    }
-    .placeholder {
-      color: #a0a0bd;
-    }
-
-    /* 方向卡片 */
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 4px;
-    }
-    .card {
-      flex: 1 1 160px;
-      padding: 14px 16px;
-      background: #f5f6ff;
-      border: 1px solid #e0e7ff;
-      border-radius: 14px;
-    }
-    .card .title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #3730a3;
-    }
-    .card .desc {
-      margin-top: 4px;
-      font-size: 12.5px;
-      color: #6b7280;
-    }
-
-    /* 联系 */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-    .link-btn {
-      flex: 1 1 140px;
-      text-align: center;
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 13.5px;
-      text-decoration: none;
-      background: #eef2ff;
-      color: #4338ca;
-      border: 1px solid #c7d2fe;
-      transition: background 0.2s;
-    }
-    .link-btn:hover {
-      background: #e0e7ff;
-    }
-
-    footer {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 12.5px;
-      color: #8b8bb0;
-    }
-  </style>
+  <title>周冯思远｜量化研究</title>
+  <meta name="description" content="周冯思远，复旦大学金融硕士，量化研究方向。关注时间序列建模、统计套利与金融衍生品定价。">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="page">
+  <div class="wrap">
 
-    <!-- 头部：头像 + 名字 + 一句话介绍 -->
-    <header class="hero">
-      <div class="avatar">z</div>
-      <h1>周冯思远</h1>
-      <p class="slogan">正在学习 AI · 用代码探索未来</p>
-      <div class="badges">
-        <span class="badge">AI 学习者</span>
-        <span class="badge">代码新手</span>
-        <span class="badge">持续成长中</span>
+    <nav class="site-nav">
+      <span class="brand">周冯思远</span>
+      <div class="nav-links">
+        <a href="#research">研究方向</a>
+        <a href="#project">项目</a>
+        <a href="#education">教育</a>
+        <a href="resume.html">简历</a>
+        <a href="#contact">联系</a>
       </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Quantitative Research</div>
+        <h1>周冯思远</h1>
+        <div class="subtitle">复旦大学金融硕士 · 量化研究方向</div>
+        <p class="lead">
+          研究方向为量化投资与资产定价，关注时间序列建模、统计套利与金融衍生品定价。
+          当前聚焦国债期货与国债 ETF 的配对交易研究，从分钟数据清洗、OU 参数估计到策略回测与样本外验证。
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="resume.html">查看简历</a>
+          <a class="btn" href="projects/ou-pairs.html">项目详情</a>
+          <a class="btn" href="https://github.com/Keyneses" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <dl>
+          <dt>学校</dt>
+          <dd>复旦大学</dd>
+          <dt>专业</dt>
+          <dd>金融硕士 · 2026–2028</dd>
+          <dt>方向</dt>
+          <dd>量化研究 / 统计套利</dd>
+          <dt>工具</dt>
+          <dd>Python · pandas · backtrader</dd>
+          <dt>城市</dt>
+          <dd>上海</dd>
+        </dl>
+        <div class="note">
+          代码与复现说明以 GitHub 仓库为准；本页项目结果为合成数据 demo，不代表实盘业绩。
+        </div>
+      </aside>
     </header>
 
-    <!-- 关于我（占位，可自由改写） -->
-    <section class="section">
-      <h2>关于我</h2>
-      <p>
-        你好，我是 <strong>zfsy</strong>。<span class="placeholder">这里可以写你的学校 / 专业 / 目前在做的事，
-        比如："我是一名复旦大学在校学生，正在系统学习人工智能，希望把想法变成看得见的作品。"</span>
-      </p>
-    </section>
-
-    <!-- 学习方向（占位，可自由改写） -->
-    <section class="section">
-      <h2>我的方向</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="title">AI 入门</div>
-          <div class="desc">正在打基础：了解 AI 是什么、能做什么</div>
+    <section class="section" id="research">
+      <div class="section-head">
+        <h2>研究方向</h2>
+        <span class="en">Research</span>
+      </div>
+      <div class="columns">
+        <div class="entry">
+          <div class="entry-title">量化投资与资产定价</div>
+          <p>关注因子构建、组合回测与风险收益归因，强调可复现的研究流程与样本外检验。</p>
         </div>
-        <div class="card">
-          <div class="title">动手实践</div>
-          <div class="desc">从这个小主页开始，做出自己的作品</div>
+        <div class="entry">
+          <div class="entry-title">时间序列与统计套利</div>
+          <p>使用协整、OU 过程与滚动估计刻画价差的均值回归特征，研究配对交易的信号与仓位。</p>
         </div>
-        <div class="card">
-          <div class="title">持续探索</div>
-          <div class="desc">接下来想学什么，由你决定</div>
+        <div class="entry">
+          <div class="entry-title">金融衍生品</div>
+          <p>关注国债期货、ETF 及其衍生结构的定价、对冲与交易机制。</p>
+        </div>
+        <div class="entry">
+          <div class="entry-title">研究方法</div>
+          <p>Python / pandas / statsmodels / backtrader；重视数据口径、无未来函数与回测复算。</p>
         </div>
       </div>
     </section>
 
-    <!-- 联系我（占位：改成你自己的邮箱 / GitHub 链接） -->
-    <section class="section">
-      <h2>联系我</h2>
-      <div class="links">
-        <a class="link-btn" href="mailto:你的邮箱@example.com">📧 邮箱</a>
-        <a class="link-btn" href="https://github.com/你的用户名" target="_blank">GitHub</a>
+    <section class="section" id="project">
+      <div class="section-head">
+        <h2>项目</h2>
+        <span class="en">Selected Project</span>
+      </div>
+
+      <div class="project">
+        <div>
+          <h3>国债期货与国债 ETF 配对交易研究</h3>
+          <div class="project-sub">Python / pandas / statsmodels / backtrader</div>
+          <p>
+            以 1 分钟价格为输入，构造 ETF 与国债期货之间的价差，估计 OU 参数并设计三阈值交易规则，
+            在训练期校准、验证期外推，最终以 backtrader 复算。
+          </p>
+          <ul>
+            <li>清洗分钟快照并重采样，完成 ETF 分红前复权与期货主连换月拼接。</li>
+            <li>滚动 OLS 估计对冲比率，ADF 检验价差平稳性，AR(1) 离散化估计 OU 参数。</li>
+            <li>三阈值开仓 / 平仓 / 止损，按 β 换算对冲手数；信号收盘生成、下一根 bar 撮合。</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">pairs trading</span>
+            <span class="tag">Ornstein–Uhlenbeck</span>
+            <span class="tag">cointegration</span>
+            <span class="tag">backtrader</span>
+          </div>
+          <div class="project-links">
+            <a href="projects/ou-pairs.html">项目详情 →</a>
+            <a href="https://github.com/Keyneses/ou-pairs-trading" target="_blank" rel="noopener">代码仓库 →</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/ou-equity.png" alt="OU 配对策略净值曲线">
+          <figcaption>合成数据 demo：基线与训练期校准参数的净值曲线。</figcaption>
+        </figure>
       </div>
     </section>
 
-    <footer>© 2026 周冯思远· 用 ❤ 和 AI 制作</footer>
+    <section class="section" id="education">
+      <div class="section-head">
+        <h2>教育</h2>
+        <span class="en">Education</span>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">复旦大学 · 金融硕士</span>
+          <span class="entry-date">2026–2028</span>
+        </div>
+        <div class="entry-sub">量化投资理论与实务、金融大数据挖掘与分析、计量经济学方法与应用、金融衍生工具理论与实务</div>
+        <p>研究生入学考试初试总分 420，数学三满分（150 / 150），复试总排名前十。</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">山东财经大学 · 金融数学本科</span>
+          <span class="entry-date">2018–2022</span>
+        </div>
+        <div class="entry-sub">数学与统计基础；多次获校级奖学金，全国大学生数学竞赛（初赛）一、二等奖。</div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-head">
+        <h2>技能</h2>
+        <span class="en">Skills</span>
+      </div>
+      <dl class="skill-grid">
+        <dt>编程</dt>
+        <dd>Python（pandas / NumPy / statsmodels / backtrader）、SQL、Excel</dd>
+        <dt>方法</dt>
+        <dd>时间序列、随机过程、OU 过程、协整与平稳性检验、机器学习、PCA / PLS / SPCA</dd>
+        <dt>语言</dt>
+        <dd>中文（母语）、英语（CET-6，可阅读英文研究与工作资料）</dd>
+      </dl>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head">
+        <h2>联系</h2>
+        <span class="en">Contact</span>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:1470520256@qq.com">1470520256@qq.com</a>
+        <a href="https://github.com/Keyneses" target="_blank" rel="noopener">github.com/Keyneses</a>
+        <span>上海</span>
+        <a href="resume.html">简历（HTML）</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 周冯思远</span>
+      <span>最后更新：2026.10</span>
+    </footer>
 
   </div>
 </body>

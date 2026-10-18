@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国债期货与国债 ETF 配对交易研究｜周冯思远</title>
+  <meta name="description" content="基于 OU 过程的国债期货与国债 ETF 配对交易研究：滚动对冲比率、ADF 检验、三阈值策略与 backtrader 回测。">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <nav class="site-nav">
+      <a class="brand" href="../index.html">周冯思远</a>
+      <div class="nav-links">
+        <a href="../index.html">主页</a>
+        <a href="../resume.html">简历</a>
+        <a href="https://github.com/Keyneses/ou-pairs-trading" target="_blank" rel="noopener">代码仓库</a>
+      </div>
+    </nav>
+
+    <header class="hero" style="grid-template-columns: 1fr; padding-bottom: 0;">
+      <div>
+        <div class="eyebrow">Selected Project</div>
+        <h1 style="font-size: 36px;">国债期货与国债 ETF 配对交易研究</h1>
+        <div class="subtitle">Ornstein–Uhlenbeck 均值回归 · Python / pandas / statsmodels / backtrader</div>
+        <p class="lead">
+          国债 ETF 与国债期货跟踪同一利率曲线，短期价格偏离具有均值回归特征。项目以 1 分钟价格为输入，
+          围绕价差构造、OU 参数估计、三阈值交易与样本外验证，建立从数据清洗到回测复算的完整链路。
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/Keyneses/ou-pairs-trading" target="_blank" rel="noopener">代码仓库</a>
+          <a class="btn" href="../resume.html">简历</a>
+          <a class="btn" href="../index.html">返回主页</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>方法</h2>
+        <span class="en">Method</span>
+      </div>
+      <div class="columns">
+        <div class="entry">
+          <div class="entry-title">1. 数据准备</div>
+          <p>清洗国债期货与 ETF 分钟快照，依据样例数据反推 K 线边界与清洗口径（涨跌停哨兵值、盘前占位行、午休段），重采样为 1 分钟序列；完成 ETF 分红前复权与期货主连换月拼接，形成无跳空、按时间对齐的配对价格序列。</p>
+        </div>
+        <div class="entry">
+          <div class="entry-title">2. 价差与 OU 建模</div>
+          <p>对 ETF 与国债期货价格做滚动 OLS（ETF 为因变量、期货为自变量），以残差构造价差；对价差做 ADF 平稳性检验，按 AR(1) 离散化估计 OU 参数 μ、θ、σ_eq 与半衰期，并计算滚动 z-score。</p>
+        </div>
+        <div class="entry">
+          <div class="entry-title">3. 信号与仓位</div>
+          <p>采用开仓、平仓、止损三阈值框架；按 β 换算两腿名义价值与对冲手数，仓位随偏离幅度分层。信号在收盘生成，市价单在下一根 bar 撮合，避免使用未来信息。</p>
+        </div>
+        <div class="entry">
+          <div class="entry-title">4. 校准与验证</div>
+          <p>在前 50% 训练期做阈值网格搜索，在后 50% 验证期检查外推表现；最终结果统一用 backtrader 复算，并与快速向量化引擎的排序结论交叉核对。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>结果</h2>
+        <span class="en">Result</span>
+      </div>
+      <p>以下为合成数据 demo：120 个交易日、1 分钟频率、初始资金 1,000 万、零费率。合成数据按已知 OU 过程生成，结果用于验证研究链路，不代表真实市场表现。</p>
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>参数</th>
+            <th>累计收益</th>
+            <th>年化夏普</th>
+            <th>最大回撤</th>
+            <th>开仓次数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>baseline（a=2.0, b=0.5, c=3.5）</td>
+            <td>0.49%</td>
+            <td>2.93</td>
+            <td>−0.15%</td>
+            <td>187</td>
+          </tr>
+          <tr>
+            <td>训练期校准（a=1.5, b=0.3, c=3.0）</td>
+            <td>1.09%</td>
+            <td>4.49</td>
+            <td>−0.09%</td>
+            <td>362</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="figure-grid">
+        <figure>
+          <img src="../assets/ou-zscore.png" alt="z-score 与三阈值信号">
+          <figcaption>z-score 时间序列与开仓 / 平仓 / 止损阈值。</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/ou-equity.png" alt="策略净值曲线">
+          <figcaption>基线与训练期校准参数的净值曲线。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>工程实现</h2>
+        <span class="en">Implementation</span>
+      </div>
+      <p>代码按数据、模型、策略、校准、绘图拆分；提供合成协整数据生成器与命令行入口，仓库不包含行情数据。单元测试覆盖 OLS / OU 参数恢复、无未来函数断言与回测冒烟测试，GitHub Actions 自动运行。</p>
+      <div class="tags">
+        <span class="tag">rolling OLS</span>
+        <span class="tag">ADF</span>
+        <span class="tag">AR(1) / OU</span>
+        <span class="tag">three-threshold</span>
+        <span class="tag">backtrader</span>
+        <span class="tag">pytest</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>边界</h2>
+        <span class="en">Limitations</span>
+      </div>
+      <p>未计佣金、滑点、冲击成本与保证金占用；仅做一次性训练 / 验证切分；输入序列需事先完成复权与换月处理。合成数据的结果偏乐观，实盘前需要按真实费率与执行条件复测。</p>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 周冯思远</span>
+      <span><a href="../index.html">主页</a> · <a href="../resume.html">简历</a> · <a href="https://github.com/Keyneses/ou-pairs-trading" target="_blank" rel="noopener">代码</a></span>
+    </footer>
+
+  </div>
+</body>
+</html>
